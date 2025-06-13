@@ -1,3 +1,5 @@
+package Money;
+
 class Dollar {
     int amount;
     Dollar(int amount) {
