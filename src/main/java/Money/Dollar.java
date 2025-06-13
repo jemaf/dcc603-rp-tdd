@@ -1,11 +1,11 @@
 package Money;
 
-class Dollar {
-    int amount;
-    Dollar(int amount) {
-        this.amount= amount;
+public class Dollar extends Money {
+    public Dollar(int amount) {
+        this.amount = amount;
     }
-    void times(int multiplier) {
-        amount= amount * multiplier;
+
+    public Dollar times(int multiplier) {
+        return new Dollar(amount * multiplier);
     }
-}	
+}
