@@ -1,23 +1,11 @@
-class Dollar {
-    private final int amount;          // agora privado e final
+class Dollar extends Money {
 
     Dollar(int amount) {
-        this.amount = amount;
+        super(amount);
     }
 
+    @Override
     Dollar times(int multiplier) {
-        return new Dollar(amount * multiplier);   // imutável
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof Dollar)) return false;
-        Dollar other = (Dollar) obj;
-        return this.amount == other.amount;
-    }
-
-    @Override
-    public int hashCode() {
-        return amount;                  // boa prática ao sobrescrever equals
+        return new Dollar(amount * multiplier);
     }
 }
