@@ -61,4 +61,15 @@ public class MoneyTest {
         Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
         assertEquals(new Dollar(10), result);  // 5 USD + (10/2)=5 USD
     }
+    @Test
+    public void testSumTimes() {
+        Expression fiveBucks = new Dollar(5);
+        Bank bank = new Bank();
+
+        // (5 USD + 5 USD) × 2  →  20 USD
+        Expression sum = fiveBucks.plus(fiveBucks).times(2);
+        Money result = bank.reduce(sum, "USD");
+
+        assertEquals(new Dollar(20), result);
+    }
 }
