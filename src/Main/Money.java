@@ -23,8 +23,17 @@ abstract class Money  {
 
    abstract String currency();
 
-   static Dollar dollar(int amount)  {
-      return new Dollar(amount);
+   static Money dollar(int amount)  {
+      return new Dollar(amount, "USD");
+   }
+
+   static Money franc(int amount) {
+      return new Franc(amount, "CHF");
+   }
+
+   Money(int amount, String currency) {
+      this.amount = amount;
+      this.currency = currency;
    }
 	
    abstract Money times(int multiplier);  
@@ -39,8 +48,7 @@ abstract class Money  {
 class Dollar extends Money {
 
    Dollar(int amount, String currency)  {
-      this.amount = amount;
-      this.currency = currency;
+      super(amount, currency);
    }
 
    String currency() {
@@ -65,10 +73,9 @@ public void testFrancMultiplication() {
 }
 
 class Franc extends Money {
-				
+
    Franc(int amount, String currency) {
-      this.amount = amount;
-      this.currency = currency;
+      super(amount, currency);
    }
 
    String currency() {
