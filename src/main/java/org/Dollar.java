@@ -1,11 +1,11 @@
 package org;
 
-class Dollar {
-  int amount = 10;
-
-  Dollar(int amount) {
+public class Dollar extends Money {
+  public Dollar(int amount) {
+    this.amount = amount;
   }
 
-  void times(int multiplier) {
+   Money times(int multiplier) {
+    return new Dollar(amount * multiplier);
   }
 }
