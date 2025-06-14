@@ -4,6 +4,6 @@ class Dollar {
         this.amount = amount;   // armazena o valor recebido
     }
     void times(int multiplier) {
-        // ainda não faz nada
+        amount = amount * multiplier;
     }
 }
