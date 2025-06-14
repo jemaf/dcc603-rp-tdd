@@ -21,7 +21,9 @@ class Money  {
    protected int amount;
    protected String currency;
 
-   abstract String currency();
+   String currency() {
+      return currency;
+   }
 
    static Money dollar(int amount)  {
       return new Money(amount, "USD");
@@ -44,5 +46,15 @@ class Money  {
       Money money = (Money) object;
       return amount == money.amount && currency().equals(money.currency());
    }
-			
+}
+
+class franc extends Money {
+   franc(int amount, String currency) {
+      super(amount, currency);
+}
+
+class dollar extends Money {
+   dollar(int amount, String currency) {
+      super(amount, currency);
+   }
 }
