@@ -1,9 +1,20 @@
 class Dollar {
-    int amount;                 // não inicia com 10!
+    final int amount;             // agora imutável
+
     Dollar(int amount) {
-        this.amount = amount;   // armazena o valor recebido
+        this.amount = amount;
     }
-    void times(int multiplier) {
-        amount = amount * multiplier;
+
+    // devolve NOVO Dollar
+    Dollar times(int multiplier) {
+        return new Dollar(amount * multiplier);
+    }
+
+    // compara pelo campo amount
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Dollar)) return false;
+        Dollar other = (Dollar) obj;
+        return this.amount == other.amount;
     }
 }
