@@ -1,6 +1,6 @@
 import static org.junit.Assert.*;
 
-import java.beans.Expression;
+
 
 import org.junit.Test;
 
@@ -31,7 +31,7 @@ public class MoneyTest {
         assertEquals(new Franc(15), five.times(3));
     }
     @Test
-public void testSimpleAddition() {
+    public void testSimpleAddition() {
     Money five = new Dollar(5);
     Expression sum = five.plus(five);
     Bank bank = new Bank();
