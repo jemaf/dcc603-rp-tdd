@@ -39,11 +39,16 @@ public class MoneyTest {
     assertEquals(new Dollar(10), result);
     
 }
-@Test
+    @Test
     public void testReduceMoneyDifferentCurrency() {
         Bank bank = new Bank();
         bank.addRate("CHF", "USD", 2);               // 2 francos = 1 dólar
         Money result = bank.reduce(new Franc(2), "USD");
         assertEquals(new Dollar(1), result);
+    }
+    @Test
+    public void testIdentityRate() {
+        Bank bank = new Bank();
+        assertEquals(1, bank.rate("USD", "USD"));
     }
 }
