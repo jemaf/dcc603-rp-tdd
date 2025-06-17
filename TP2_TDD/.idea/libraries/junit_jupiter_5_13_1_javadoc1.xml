@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="junit-jupiter-5.13.1-javadoc1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.idea/libraries/junit-jupiter-5.13.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/.idea/libraries/junit-jupiter-engine-5.13.1-javadoc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$PROJECT_DIR$/.idea/libraries/junit-jupiter-5.13.1-javadoc.jar!/" recursive="false" />
+    <jarDirectory url="jar://$PROJECT_DIR$/.idea/libraries/junit-jupiter-engine-5.13.1-javadoc.jar!/" recursive="false" />
+  </library>
+</component>
