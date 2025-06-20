@@ -1,5 +1,17 @@
 public class Dollar {
-    int amount = 10;
-    Dollar(int amount) { }
-    void times(int multiplier) { }
+    private int amount;
+
+    public Dollar(int amount) {
+        this.amount = amount;
+    }
+
+    public Dollar times(int multiplier) {
+        return new Dollar(amount * multiplier);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        Dollar dollar = (Dollar) object;
+        return amount == dollar.amount;
+    }
 }
