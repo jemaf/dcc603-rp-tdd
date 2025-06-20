@@ -1,0 +1,30 @@
+# → Arquivos de build
+/target/
+/build/
+/out/
+
+# → Classes compiladas
+**/*.class
+
+# → Dependências locais (caso use lib/)
+/lib/*.jar
+
+# → Logs
+*.log
+
+# → Eclipse/IntelliJ (se por acaso estiverem no repositório)
+/*.classpath
+/*.project
+/.settings/
+/.idea/
+/*.iml
+
+# → VS Code
+.vscode/
+
+# → MacOS
+.DS_Store
+
+# → Arquivos temporários
+*~
+*.tmp
