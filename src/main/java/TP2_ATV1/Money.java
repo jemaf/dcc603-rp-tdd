@@ -1,4 +1,4 @@
-package RP2;
+package TP2_ATV1;
 
 class Money {
     protected int amount;
