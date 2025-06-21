@@ -1,13 +1,15 @@
 package Test_Driven_Development_Practical_Assignemnt_UFMG;
 
-public class Dollar {
-    int amount = 10;
+public class Dollar extends Money{
+    
     
     public Dollar(int amount) {
-       
+       this.amount=amount;
     }
     
-    void times(int multiplier) {
-        
+    Dollar times(int multiplier) {
+        return new Dollar(amount*multiplier);
     }
+
+    
 }
