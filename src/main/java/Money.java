@@ -1,4 +1,4 @@
-public abstract class Money {
+public class Money {
    protected int amount;
    protected String currency;
 
@@ -7,15 +7,17 @@ public abstract class Money {
       this.currency = currency;
    }
 
-   public static Dollar dollar(int amount)  {
-      return new Dollar(amount, "USD");
+   public static Money dollar(int amount)  {
+      return new Money(amount, "USD");
    }
    
-   public static Franc franc(int amount) {
-      return new Franc(amount, "CHF");
+   public static Money franc(int amount) {
+      return new Money(amount, "CHF");
    }
 	
-   public abstract Money times(int multiplier);
+   public Money times(int multiplier) {
+      return new Money(amount * multiplier, currency);
+   }
    
    public String currency() {
       return currency;
@@ -26,12 +28,19 @@ public abstract class Money {
       if (object == null) {
           return false;
       }
+      if (!(object instanceof Money)) {
+          return false;
+      }
       Money money = (Money) object;
-      return amount == money.amount && getClass().equals(money.getClass());
+      return amount == money.amount && currency().equals(money.currency());
    }
 
    @Override
    public int hashCode() {
-       return Integer.hashCode(amount);
+       final int prime = 31;
+       int result = 1;
+       result = prime * result + amount;
+       result = prime * result + ((currency == null) ? 0 : currency.hashCode());
+       return result;
    }
 }
