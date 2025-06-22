@@ -66,7 +66,7 @@ public void testMultiplication() {
    assertEquals(new Dollar(15), product);
 }
 ```
-Precisamos alterar `Dolar.times()` para compilar o novo teste:
+Precisamos alterar `Dollar.times()` para compilar o novo teste:
 
 ```java
 class Dollar {
