@@ -1,6 +1,6 @@
 package main.java;
 
-public abstract class Money {
+public class Money {
    protected int amount;
    protected String currency;
 
@@ -10,19 +10,21 @@ public abstract class Money {
    }
 
    public static Money dollar(int amount) {
-      return new Dollar(amount, "USD");
+      return new Money(amount, "USD");
    }
 
      public static Money franc(int amount) {
-      return new Franc(amount, "CHF");
+      return new Money(amount, "CHF");
    }
 
    public boolean equals(Object object)  {
       Money money = (Money) object;
-      return amount == money.amount && getClass().equals(money.getClass());
+       return amount == money.amount && currency().equals(money.currency());
    }   
 
-   public abstract Money times(int multiplier);
+     public Money times(int multiplier){
+      return new Money(amount * multiplier, currency);
+   }
 
    public String currency(){
       return currency;
