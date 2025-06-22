@@ -1,0 +1,23 @@
+# Ignore all .class files
+*.class
+
+# Ignore the /bin directory and its contents
+/bin/
+
+# Ignore .env files (but not .env.example)
+!.env.example
+.env
+
+# Ignore all .log files in the logs directory
+/logs/*.log
+
+# Ignore the node_modules directory
+/node_modules/
+
+# Ignore the gradle directory
+/gradle/
+*.gradle
+gradlew*
+
+# Ignore the build directory
+/build/
