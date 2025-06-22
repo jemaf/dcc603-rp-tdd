@@ -1,7 +1,8 @@
-public class Dollar {
-   public int amount; 
+public class Dollar extends Money {
    public Dollar(int amount) {
-       this.amount = 10;
-   }           
-   public void times(int multiplier) {}
+      super(amount);
+   }
+   public Dollar times(int multiplier) {
+      return new Dollar(amount * multiplier);
+   }
 }
