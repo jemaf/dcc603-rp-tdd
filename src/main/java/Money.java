@@ -1,5 +1,8 @@
 abstract class Money {
     protected int amount;
+    protected String currency;
+
+    abstract String currency();
 
     @Override
     public boolean equals(Object object) {
